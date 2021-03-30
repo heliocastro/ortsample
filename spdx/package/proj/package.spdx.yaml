@@ -1,0 +1,27 @@
+SPDXID: SPDXRef-DOCUMENT
+creationInfo:
+  created: '2021-03-29T13:55:50Z'
+  creators:
+  - 'Organization: Private'
+  - 'Person: Helio Chissini de Castro'
+  licenseListVersion: '8.19'
+dataLicense: CC0-1.0
+documentDescribes:
+- SPDXRef-Package-proj
+documentNamespace: http://spdx.org/spdxdocs/spdx-document-proj
+name: proj-7.0.0
+packages:
+- SPDXID: SPDXRef-Package-proj
+  copyrightText: Copyright (c) 2000, Frank Warmerdam
+  description: "PROJ is a generic coordinate transformation software that transforms 
+    geospatial coordinates from one coordinate reference system (CRS) to another. 
+    This includes cartographic projections as well as geodetic transformations."
+  downloadLocation: https://download.osgeo.org/proj/proj-7.0.0.tar.gz
+  filesAnalyzed: true
+  homepage: https://proj.org/
+  licenseConcluded: NOASSERTION
+  licenseDeclared: MIT
+  name: proj
+  originator: 'Person: Helio Chissini de Castro (helio@kde.org)'
+  versionInfo: 7.0.0
+spdxVersion: SPDX-2.2

@@ -1,0 +1,63 @@
+SPDXID: "SPDXRef-DOCUMENT"
+spdxVersion: "SPDX-2.2"
+creationInfo:
+  created: "2021-03-29T08:32:00Z"
+  creators:
+  - "Organization: Private"
+  - "Person: Helio Chissini de Castro (helio@kde.org)"
+  licenseListVersion: "8.19"
+name: "prjsample-0.1.0"
+dataLicense: "CC0-1.0"
+documentNamespace: "http://spdx.org/spdxdocs/spdx-document-prjsample"
+documentDescribes:
+- "SPDXRef-Package-prjsample"
+externalDocumentRefs:
+- externalDocumentId: DocumentRef-boost-1.7.1
+  checksum:
+    algorithm: SHA1
+    checksumValue: be0404eacd4ca56d3ad991b0fe6df5f649400ace
+  spdxDocument: ../package/boost/package.spdx.yaml
+- externalDocumentId: DocumentRef-proj-7.0.0
+  checksum:
+    algorithm: SHA1
+    checksumValue: a6cdf52bb3cba406bd77f7410c25dc2f3c054aa5
+  spdxDocument: ../package/proj/package.spdx.yaml
+packages:
+- SPDXID: "SPDXRef-Package-prjsample"
+  description: "prjsample"
+  copyrightText: "Copyright (C) 2020 Helio Chissini de Castro"
+  downloadLocation: "git+https://github.com/heliocastro/ortsample"
+  filesAnalyzed: false
+  homepage: "https://www.heliocastro.info"
+  licenseConcluded: "Closed"
+  licenseDeclared: "Closed"
+  name: "prjsample"
+  versionInfo: "0.1.0"
+  originator: "Organization: Private"
+# - SPDXID: "SPDXRef-Package-boost"
+#   copyrightText: "NOASSERTION"
+#   description: "Boost provides free peer-reviewed portable C++ source libraries."
+#   downloadLocation: "https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz"
+#   filesAnalyzed: true
+#   homepage: "https://www.boost.org"
+#   licenseConcluded: "NOASSERTION"
+#   licenseDeclared: "BSL-1.0"
+#   name: "boost"
+#   originator: 'Person: Helio Chissini de Castro (helio@kde.org)'
+#   versionInfo: "1.7.1"
+relationships:
+- spdxElementId: "DocumentRef-boost-1.7.1:SPDXRef-ToolsElement"
+  relatedSpdxElement: "SPDXRef-Package-prjsample"
+  relationshipType: "BUILD_DEPENDENCY_OF"
+- spdxElementId: SPDXRef-Package-prjsample
+  relatedSpdxElement: DocumentRef-boost-1.7.1::SPDXRef-ToolsElement
+  relationshipType: "STATIC_LINK"  
+# - spdxElementId: "SPDXRef-Package-prjsample"
+#   relatedSpdxElement: "SPDXRef-Package-boost"
+#   relationshipType: "STATIC_LINK"
+- spdxElementId: DocumentRef-proj-7.0.0::SPDXRef-ToolsElement
+  relatedSpdxElement: SPDXRef-Package-prjsample
+  relationshipType: "BUILD_DEPENDENCY_OF"
+- spdxElementId: SPDXRef-Package-prjsample
+  relatedSpdxElement: DocumentRef-proj-7.0.0::SPDXRef-ToolsElement
+  relationshipType: "DYNAMIC_LINK"
